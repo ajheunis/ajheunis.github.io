@@ -1,0 +1,9 @@
+/* Offset for Bootstrap bottom navbar */
+body {
+  padding-top: 15px;
+  padding-bottom: 70px;
+}
+
+.content-column {
+  background-color: lightblue
+}
