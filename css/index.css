@@ -2,10 +2,11 @@
 body {
   padding-top: 15px;
   padding-bottom: 70px;
+  background-color: #f1f1f1;
 }
 
 .content-column {
-  background-color: lightblue
+  background-color: white
 }
 
 /* Media breakpoints  */
