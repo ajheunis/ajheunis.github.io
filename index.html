@@ -43,43 +43,109 @@
                                 class="text-muted">in</small>
                             SaaS & Data Products<small class="text-muted">, based in </small>Philadelphia, PA
                         </h2>
-                        <div class="text-center">
-                            <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/in/adamheunis/"
-                                role="button">
-                                <i class="fa-brands fa-linkedin"></i>
-                                <span class="hidden-sm">LinkedIn</span></a>
-                            <a class="btn btn-primary btn-sm" href="https://www.facebook.com/attie/" role="button">
-                                <i class="fa-brands fa-facebook"></i>
-                                <span class="hidden-sm">Facebook</span></a>
-                            <a class="btn btn-primary btn-sm" href="https://github.com/ajheunis" role="button">
-                                <i class="fa-brands fa-github"></i>
-                                <span class="hidden-sm">GitHub</span></a>
-                            <a class="btn btn-primary btn-sm" href="https://www.instagram.com/attieheunis/"
-                                role="button">
-                                <i class="fa-brands fa-instagram"></i>
-                                <span class="hidden-sm">Instagram</span>
-                            </a>
-                        </div>
-                        <p class="h6">What I do:</p>
-                        <ul>
-                            <li>Develop and deliver <strong>best-in-class, globally scalable software, cloud, and
-                                    data solutions</strong> that exceed customer expectations and drive business
-                                growth.</li>
-                            <li>Establish <strong>high-performing, well-coordinated engineering teams</strong>
-                                dedicated to <strong>technical excellence</strong>, continuous improvement, and
-                                collaborative problem-solving.</li>
-                            <li>Formulate and execute <strong>short, medium, and long-term technical
-                                    strategies</strong> that align with enterprise goals, particularly within the
-                                <strong>Healthcare sector</strong>, ensuring technology is a key enabler of business
-                                success.
+
+                        <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button type="button" class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                    href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">What I
+                                    do</button>
                             </li>
-                            <li>Foster a culture of <strong>innovation and agility</strong>, encouraging the
-                                exploration of <strong>emerging technologies and methodologies</strong> to maintain
-                                a competitive edge in the market.</li>
-                            <li>Ensure robust <strong>cybersecurity and data privacy practices</strong> are
-                                ingrained across all technical operations, safeguarding organizational and customer
-                                data while complying with industry regulations and standards.</li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                    href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false">Profile</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">Contact</button>
+                            </li>
                         </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <ul>
+                                    <li>Develop and deliver <strong>best-in-class, globally scalable software, cloud,
+                                            and data solutions</strong> that exceed customer expectations and drive
+                                        business
+                                        growth.</li>
+                                    <li>Establish <strong>high-performing, well-coordinated engineering teams</strong>
+                                        dedicated to <strong>technical excellence</strong>, continuous improvement, and
+                                        collaborative problem-solving.</li>
+                                    <li>Formulate and execute <strong>short, medium, and long-term technical
+                                            strategies</strong> that align with enterprise goals, ensuring technology is
+                                        a key enabler of business success.
+                                    </li>
+                                    <li>Foster a culture of <strong>innovation and agility</strong>, encouraging the
+                                        exploration of <strong>emerging technologies and methodologies</strong> to
+                                        maintain a competitive edge in the market.</li>
+                                    <li>Ensure robust <strong>cybersecurity and data privacy practices</strong> are
+                                        ingrained across all technical operations, safeguarding organizational and
+                                        customer data while complying with industry regulations and standards.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                aria-labelledby="pills-profile-tab">
+                                <div class="text-center">
+                                    <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/in/adamheunis/"
+                                        role="button">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                        <span class="hidden-sm">LinkedIn</span></a>
+                                    <a class="btn btn-primary btn-sm" href="https://www.facebook.com/attie/"
+                                        role="button">
+                                        <i class="fa-brands fa-facebook"></i>
+                                        <span class="hidden-sm">Facebook</span></a>
+                                    <a class="btn btn-primary btn-sm" href="https://github.com/ajheunis" role="button">
+                                        <i class="fa-brands fa-github"></i>
+                                        <span class="hidden-sm">GitHub</span></a>
+                                    <a class="btn btn-primary btn-sm" href="https://www.instagram.com/attieheunis/"
+                                        role="button">
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <span class="hidden-sm">Instagram</span>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                aria-labelledby="pills-contact-tab">
+                                <!-- Unstatic Contact Form-->
+                                <form method="post"
+                                    action="https://forms.un-static.com/forms/5bac3a7c37f7100c130f9f27504dc4e44b6cfc7a">
+                                    <div class="form-group row mb-3">
+                                        <label for="name" class="col-4 col-form-label">Name</label>
+                                        <div class="col-8">
+                                            <input id="name" name="name" placeholder="Please enter your name"
+                                                type="text" required="required" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label for="email" class="col-4 col-form-label">E-mail address</label>
+                                        <div class="col-8">
+                                            <input id="email" name="email" placeholder="Your e-mail address" type="text"
+                                                required="required" class="form-control">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label for="message" class="col-4 col-form-label">Message</label>
+                                        <div class="col-8">
+                                            <textarea id="message" name="message" cols="40" rows="4" required="required"
+                                                class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="offset-4 col-8">
+                                            <button name="submit" type="submit" class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div align="center">
+                                    <p><small>(Powered by <a rel="nofollow" href="Un-static Forms">Un-static
+                                                Forms</a>)</small></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
