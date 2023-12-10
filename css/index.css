@@ -15,3 +15,14 @@ body {
     display: none;
   }
 }
+
+.profile-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+}
