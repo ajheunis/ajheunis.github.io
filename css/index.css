@@ -1,28 +1,5 @@
 /* Offset for Bootstrap bottom navbar */
 body {
-  padding-top: 15px;
   padding-bottom: 70px;
   background-color: #f1f1f1;
-}
-
-.content-column {
-  background-color: white
-}
-
-/* Media breakpoints  */
-@media (max-width: 768px) {
-  .hidden-sm {
-    display: none;
-  }
-}
-
-.profile-image-container {
-  position: relative;
-  display: inline-block;
-}
-
-.social-icons {
-  position: absolute;
-  bottom: 0;
-  margin: 10px;
 }

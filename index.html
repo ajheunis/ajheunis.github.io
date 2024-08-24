@@ -32,14 +32,14 @@
     </script>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-    <div class="container my-auto">
-        <div class="row gy-4 gx-4">
-            <div class="col-12 col-md-6 d-flex align-items-center">
-                <div class="profile-image-container">
+<body class="d-flex flex-column min-vh-100 pt-3">
+    <div class="container md-container my-auto">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="position-relative">
                     <img src="images/adam-heunis-profile-photo.jpg" class="img-fluid rounded mx-auto d-block"
                         alt="Adam Heunis in a suit, smiling" />
-                    <div class="social-icons">
+                    <div class="position-absolute bottom-0 end-0 me-2 mb-2">
                         <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/in/adamheunis/" role="button">
                             <i class="fa-brands fa-linkedin"></i>
                             <span class="hidden-sm">LinkedIn</span>
@@ -59,142 +59,137 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 d-flex">
-                <div class="rounded content-column">
-                    <div class="p-2">
-                        <p class="h6">Hello</p>
-                        <h1 class="display-1"><small class="text-muted">I'm </small>Adam Heunis
-                        </h1>
-                        <h2>
-                            <small class="text-muted">a </small>Technology Executive <small
-                                class="text-muted">in</small>
-                            SaaS & Data Products<small class="text-muted">, based in </small>Philadelphia, PA
-                        </h2>
-
-                        <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button type="button" class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                    href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">What I
-                                    do</button>
+            <div class="col-12 col-md-6 bg-white rounded">
+                <h1 class="display-1"><small class="text-muted">I'm </small>Adam Heunis</h1>
+                <h2>
+                    <small class="text-muted">a </small>Technology Executive <small class="text-muted">in</small>
+                    SaaS & Data Products<small class="text-muted">, based in </small>Philadelphia, PA
+                </h2>
+                <ul class="nav nav-pills nav-fill my-4" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button type="button" class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">What I
+                            do</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile"
+                            role="tab" aria-controls="pills-profile" aria-selected="false">Who I am</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact"
+                            role="tab" aria-controls="pills-contact" aria-selected="false">Get in touch</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <ul>
+                            <li>Develop and deliver <strong>best-in-class, globally scalable software, cloud,
+                                    and data solutions</strong> that exceed customer expectations and drive
+                                business
+                                growth.</li>
+                            <li>Establish <strong>high-performing, well-coordinated engineering teams</strong>
+                                dedicated to <strong>technical excellence</strong>, continuous improvement, and
+                                collaborative problem-solving.</li>
+                            <li>Formulate and execute <strong>short, medium, and long-term technical
+                                    strategies</strong> that align with enterprise goals, ensuring technology is
+                                a key enabler of business success.
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                    href="#pills-profile" role="tab" aria-controls="pills-profile"
-                                    aria-selected="false">Who I am</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                    href="#pills-contact" role="tab" aria-controls="pills-contact"
-                                    aria-selected="false">Contact</button>
-                            </li>
+                            <li>Foster a culture of <strong>innovation and agility</strong>, encouraging the
+                                exploration of <strong>emerging technologies and methodologies</strong> to
+                                maintain a competitive edge in the market.</li>
+                            <li>Ensure robust <strong>cybersecurity and data privacy practices</strong> are
+                                ingrained across all technical operations, safeguarding organizational and
+                                customer data while complying with industry regulations and standards.</li>
                         </ul>
-                        <hr />
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                aria-labelledby="pills-home-tab">
-                                <ul>
-                                    <li>Develop and deliver <strong>best-in-class, globally scalable software, cloud,
-                                            and data solutions</strong> that exceed customer expectations and drive
-                                        business
-                                        growth.</li>
-                                    <li>Establish <strong>high-performing, well-coordinated engineering teams</strong>
-                                        dedicated to <strong>technical excellence</strong>, continuous improvement, and
-                                        collaborative problem-solving.</li>
-                                    <li>Formulate and execute <strong>short, medium, and long-term technical
-                                            strategies</strong> that align with enterprise goals, ensuring technology is
-                                        a key enabler of business success.
-                                    </li>
-                                    <li>Foster a culture of <strong>innovation and agility</strong>, encouraging the
-                                        exploration of <strong>emerging technologies and methodologies</strong> to
-                                        maintain a competitive edge in the market.</li>
-                                    <li>Ensure robust <strong>cybersecurity and data privacy practices</strong> are
-                                        ingrained across all technical operations, safeguarding organizational and
-                                        customer data while complying with industry regulations and standards.</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                aria-labelledby="pills-profile-tab" style="overflow: auto;max-height: 325px;">
-                                <div>
-                                    <p>Welcome to my world of technology and innovation! I'm a seasoned consultant with
-                                        a deep-rooted passion for technology, particularly in the realms of software and
-                                        data. My journey began in the picturesque Boesmansriviermond, a small village
-                                        nestled along the stunning Eastern Cape coastline of South Africa. This
-                                        beautiful, rural backdrop of my childhood sparked a contrasting fascination in
-                                        technology that has stayed with me throughout my life.</p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="overflow-auto" style="max-height: 20rem">
+                            <h2>Welcome to my world of technology and innovation</h2>
+                            <p>I'm a seasoned consultant with a deep-rooted passion for technology, particularly in the
+                                realms of software and data. My journey began in the picturesque Boesmansriviermond, a
+                                small village nestled along the stunning Eastern Cape coastline of South Africa. This
+                                beautiful, rural backdrop of my childhood sparked a contrasting fascination in
+                                technology that has stayed with me throughout my life.</p>
 
-                                    <p>After completing my studies, I embarked on my professional journey by developing
-                                        a computerized quality system for my father's manufacturing business. This
-                                        project not only honed my technical skills but also instilled in me a profound
-                                        appreciation for practical, real-world applications of technology.</p>
+                            <h3>The beginning of my technological journey</h3>
+                            <p>After completing my studies, I embarked on my professional journey by developing a
+                                computerized quality system for my father's manufacturing business. This project not
+                                only honed my technical skills but also instilled in me a profound appreciation for
+                                practical, real-world applications of technology.</p>
 
-                                    <p>Over the years, I've had the privilege of building software and data solutions
-                                        for some of the largest industries globally, including Manufacturing, Finance,
-                                        and Healthcare. My expertise primarily revolves around the Microsoft and Azure
-                                        ecosystems, where I've successfully navigated and contributed to various complex
-                                        projects.</p>
+                            <h3>Global impact through technology</h3>
+                            <p>Over the years, I've had the privilege of building software and data solutions for some
+                                of the largest industries globally, including Manufacturing, Finance, and Healthcare. My
+                                expertise primarily revolves around the Microsoft and Azure ecosystems, where I've
+                                successfully navigated and contributed to various complex projects.</p>
 
-                                    <p>Beyond my professional endeavors, photography is my serious hobby. As a loyal
-                                        Nikon enthusiast, I capture the world through my lens, bringing together my love
-                                        for technology and art. This hobby is more than just a pastime; it's a creative
-                                        outlet that complements my technical skills and broadens my perspective.</p>
+                            <h3>Photography: my creative escape</h3>
+                            <p>Beyond my professional endeavors, photography is my serious hobby. As a loyal Nikon
+                                enthusiast, I capture the world through my lens, bringing together my love for
+                                technology and art. This hobby is more than just a pastime; it's a creative outlet that
+                                complements my technical skills and broadens my perspective.</p>
 
-                                    <p>Family is my cornerstone. I am blessed with a loving wife and two wonderful
-                                        teenage daughters, who are the center of my universe. Their support and love
-                                        fuel my ambitions and endeavors.</p>
+                            <h3>Family: my cornerstone</h3>
+                            <p>Family is my cornerstone. I am blessed with a loving wife and two wonderful teenage
+                                daughters, who are the center of my universe. Their support and love fuel my ambitions
+                                and endeavors.</p>
 
-                                    <p>Interestingly, despite my deep engagement with technology, I have a profound love
-                                        for the wilderness, especially the African savannah. This might seem ironic for
-                                        a technophile, but it's in these natural landscapes that I find peace and
-                                        inspiration.</p>
+                            <h3>Finding peace in the wilderness</h3>
+                            <p>Interestingly, despite my deep engagement with technology, I have a profound love for the
+                                wilderness, especially the African savannah. This might seem ironic for a technophile,
+                                but it's in these natural landscapes that I find peace and inspiration.</p>
 
-                                    <p>Traveling with my family is one of my greatest joys. Exploring new places
-                                        together, experiencing different cultures, and creating lifelong memories is
-                                        something we cherish deeply.</p>
+                            <h3>Traveling: creating lifelong memories</h3>
+                            <p>Traveling with my family is one of my greatest joys. Exploring new places together,
+                                experiencing different cultures, and creating lifelong memories is something we cherish
+                                deeply.</p>
 
-                                    <p>In summary, I am a technology enthusiast with a diverse set of interests and a
-                                        strong family foundation. My career has been a journey of learning, growth, and
-                                        contributing to various sectors through technology. I bring this wealth of
-                                        experience, passion, and a unique perspective to every project I undertake.
-                                        Let's collaborate to create innovative solutions that make a difference!</p>
+                            <h2>Let's collaborate to innovate</h2>
+                            <p>In summary, I am a technology enthusiast with a diverse set of interests and a strong
+                                family foundation. My career has been a journey of learning, growth, and contributing to
+                                various sectors through technology. I bring this wealth of experience, passion, and a
+                                unique perspective to every project I undertake. Let's collaborate to create innovative
+                                solutions that make a difference!</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <div class="container">
+                            <h2>Contact me</h2>
+                            <!-- Unstatic Contact Form-->
+                            <form method="post"
+                                action="https://forms.un-static.com/forms/5bac3a7c37f7100c130f9f27504dc4e44b6cfc7a">
+                                <div class="form-group row mb-3">
+                                    <label for="name" class="col-4 col-form-label">Name</label>
+                                    <div class="col-8">
+                                        <input id="name" name="name" placeholder="Please enter your name" type="text"
+                                            required="required" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                aria-labelledby="pills-contact-tab">
-                                <!-- Unstatic Contact Form-->
-                                <form method="post"
-                                    action="https://forms.un-static.com/forms/5bac3a7c37f7100c130f9f27504dc4e44b6cfc7a">
-                                    <div class="form-group row mb-3">
-                                        <label for="name" class="col-4 col-form-label">Name</label>
-                                        <div class="col-8">
-                                            <input id="name" name="name" placeholder="Please enter your name"
-                                                type="text" required="required" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="email" class="col-4 col-form-label">E-mail address</label>
-                                        <div class="col-8">
-                                            <input id="email" name="email" placeholder="Your e-mail address" type="text"
-                                                required="required" class="form-control">
+                                <div class="form-group row mb-3">
+                                    <label for="email" class="col-4 col-form-label">E-mail address</label>
+                                    <div class="col-8">
+                                        <input id="email" name="email" placeholder="Your e-mail address" type="text"
+                                            required="required" class="form-control">
 
-                                        </div>
                                     </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="message" class="col-4 col-form-label">Message</label>
-                                        <div class="col-8">
-                                            <textarea id="message" name="message" cols="40" rows="4" required="required"
-                                                class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="offset-4 col-8">
-                                            <button name="submit" type="submit" class="btn btn-primary">Send</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <div align="center">
-                                    <p><small>(Powered by <a rel="nofollow" href="Un-static Forms">Un-static
-                                                Forms</a>)</small></p>
                                 </div>
+                                <div class="form-group row mb-3">
+                                    <label for="message" class="col-4 col-form-label">Message</label>
+                                    <div class="col-8">
+                                        <textarea id="message" name="message" cols="40" rows="4" required="required"
+                                            class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="offset-4 col-8">
+                                        <button name="submit" type="submit" class="btn btn-primary">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div align="center">
+                                <p><small>(Powered by <a rel="nofollow" href="Un-static Forms">Un-static
+                                            Forms</a>)</small></p>
                             </div>
                         </div>
                     </div>
@@ -203,7 +198,7 @@
         </div>
     </div>
     <!-- Footer -->
-    <footer class="navbar fixed-bottom navbar-dark bg-dark">
+    <footer class="navbar fixed-bottom navbar-dark bg-dark py-3">
         <div class="container-fluid">
             <div class="container-fluid text-center">
                 <span class="navbar-text">
