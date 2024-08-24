@@ -1,5 +1,13 @@
-/* Offset for Bootstrap bottom navbar */
+.btn-primary {
+  --bs-btn-bg: rgb(27, 92, 139);
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: rgb(27, 92, 139);
+}
+
 body {
+  /* Offset for Bootstrap bottom navbar */
   padding-bottom: 70px;
   background-image: linear-gradient(
     0deg,
