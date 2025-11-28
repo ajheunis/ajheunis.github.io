@@ -16,10 +16,15 @@
     </script>
 
     <script src="https://kit.fontawesome.com/2ee18c451a.js" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
     <title>Adam Heunis, CTO | Software, Data, and AI | Azure, Databricks, and OpenAI</title>
 
     <!-- HTML Meta Tags -->
-    <title>Adam Heunis, CTO | Software, Data, AI | Azure, Databricks, OpenAI</title>
     <meta name="description"
         content="Adam Heunis is a CTO specializing in Software, Data, and AI. Expert in Azure, Databricks, and OpenAI. He delivers innovative tech solutions with a deep industry knowledge.">
 
@@ -57,196 +62,273 @@
     </script>
 </head>
 
-<body class="d-flex flex-column min-vh-100 pt-3">
-    <div class="container my-auto">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="position-relative">
-                    <img src="images/adam-heunis-profile-photo.jpg" class="img-fluid rounded mx-auto d-block"
-                        alt="Adam Heunis in a suit, smiling" />
-                    <div class="position-absolute bottom-0 start-0 ms-2 mb-2">
-                        <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/in/adamheunis/" role="button">
-                            <i class="fa-brands fa-linkedin"></i>
-                            <span class="d-none d-lg-inline">LinkedIn</span>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#hero">ADAM HEUNIS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="#what-i-do">What I Do</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#who-i-am">Who I Am</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2 hero-text-col fade-in-up">
+                    <h1 class="display-3 fw-bold mb-3">Adam Heunis <br><span class="text-highlight">CTO</span></h1>
+                    <h3 class="mb-4 text-secondary-light">
+                        Software, Data, & AI <small class="text-muted-light">in</small> Finance & Healthcare.
+                    </h3>
+
+                    <div class="social-links mb-5">
+                        <a class="btn btn-outline-light btn-social me-2" href="https://www.linkedin.com/in/adamheunis/" role="button" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="https://www.facebook.com/attie/" role="button">
-                            <i class="fa-brands fa-facebook"></i>
-                            <span class="d-none d-lg-inline">Facebook</span>
+                        <a class="btn btn-outline-light btn-social me-2" href="https://www.facebook.com/attie/" role="button" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="https://github.com/ajheunis" role="button">
+                        <a class="btn btn-outline-light btn-social me-2" href="https://github.com/ajheunis" role="button" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
-                            <span class="d-none d-lg-inline">GitHub</span>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="https://www.instagram.com/attieheunis/" role="button">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/attieheunis/" role="button" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
-                            <span class="d-none d-lg-inline">Instagram</span>
                         </a>
+                    </div>
+
+                    <a href="#what-i-do" class="btn btn-primary btn-lg btn-glow">What I Do</a>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1 mb-5 mb-lg-0 text-center position-relative fade-in-up delay-200">
+                    <div class="hero-image-wrapper">
+                        <img src="images/adam-heunis-profile-photo.jpg" class="img-fluid hero-img" alt="Adam Heunis">
+                        <div class="hero-blob"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 pt-3 pt-md-0">
-                <div class="h-100 bg-white rounded p-3">
-                    <h1 class="display-2">Adam Heunis | <span class="text-muted">CTO</span></h1>
-                    <h3>
-                        Software, Data, & AI <small class="text-muted">in</small> Finance & Healthcare.
-                        </h2>
-                        <ul class="nav nav-pills nav-fill my-4" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button type="button" class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                    href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">What I
-                                    do</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                    href="#pills-profile" role="tab" aria-controls="pills-profile"
-                                    aria-selected="false">Who I am</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                    href="#pills-contact" role="tab" aria-controls="pills-contact"
-                                    aria-selected="false">Connect</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content overflow-auto" id="pills-tabContent" style="max-height: 22rem">
-                            <div class="tab-pane fade container show active" id="pills-home" role="tabpanel"
-                                aria-labelledby="pills-home-tab">
-                                <ul>
-                                    <li>Develop and deliver <strong>best-in-class, globally scalable software, cloud,
-                                            and data solutions</strong> that exceed customer expectations and drive
-                                        business
-                                        growth.</li>
-                                    <li>Establish <strong>high-performing, well-coordinated engineering teams</strong>
-                                        dedicated to <strong>technical excellence</strong>, continuous improvement, and
-                                        collaborative problem-solving.</li>
-                                    <li>Formulate and execute <strong>short, medium, and long-term technical
-                                            strategies</strong> that align with enterprise goals, ensuring technology is
-                                        a key enabler of business success.
-                                    </li>
-                                    <li>Foster a culture of <strong>innovation and agility</strong>, encouraging the
-                                        exploration of <strong>emerging technologies and methodologies</strong> to
-                                        maintain a competitive edge in the market.</li>
-                                    <li>Ensure robust <strong>cybersecurity and data privacy practices</strong> are
-                                        ingrained across all technical operations, safeguarding organizational and
-                                        customer data while complying with industry regulations and standards.</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane fade container" id="pills-profile" role="tabpanel"
-                                aria-labelledby="pills-profile-tab">
+        </div>
+    </section>
 
-                                <h2>Technology and innovation</h2>
-                                <p>I'm a seasoned executive with a deep-rooted passion for technology, particularly in
-                                    the realms of software and data. My journey began in the picturesque
-                                    Boesmansriviermond, a small village nestled along the stunning Eastern Cape
-                                    coastline of South Africa. This beautiful, rural backdrop of my childhood sparked a
-                                    contrasting fascination in technology that has stayed with me throughout my life.
-                                </p>
-
-                                <h3>The beginning of my technological journey</h3>
-                                <p>After completing my studies, I embarked on my professional journey by developing a
-                                    computerized quality system for my father's manufacturing business. This project not
-                                    only honed my technical skills but also instilled in me a profound appreciation for
-                                    practical, real-world applications of technology.</p>
-
-                                <h3>Global impact through technology</h3>
-                                <p>Over the years, I've had the privilege of building software and data solutions for
-                                    some
-                                    of the largest industries globally, including Manufacturing, Finance, and
-                                    Healthcare. My
-                                    expertise primarily revolves around the Microsoft and Azure ecosystems, where I've
-                                    successfully navigated and contributed to various complex projects.</p>
-
-                                <h3>Photography: my creative escape</h3>
-                                <p>Beyond my professional endeavors, photography is my serious hobby. As a loyal Nikon
-                                    enthusiast, I capture the world through my lens, bringing together my love for
-                                    technology and art. This hobby is more than just a pastime; it's a creative outlet
-                                    that
-                                    complements my technical skills and broadens my perspective.</p>
-
-                                <h3>Family: my cornerstone</h3>
-                                <p>Family is my cornerstone. I am blessed with a loving wife and two wonderful teenage
-                                    daughters, who are the center of my universe. Their support and love fuel my
-                                    ambitions
-                                    and endeavors.</p>
-
-                                <h3>Finding peace in the wilderness</h3>
-                                <p>Interestingly, despite my deep engagement with technology, I have a profound love for
-                                    the
-                                    wilderness, especially the African savannah. This might seem ironic for a
-                                    technophile,
-                                    but it's in these natural landscapes that I find peace and inspiration.</p>
-
-                                <h3>Traveling: creating lifelong memories</h3>
-                                <p>Traveling with my family is one of my greatest joys. Exploring new places together,
-                                    experiencing different cultures, and creating lifelong memories is something we
-                                    cherish
-                                    deeply.</p>
-
-                                <h2>Let's collaborate to innovate</h2>
-                                <p>In summary, I am a technology enthusiast with a diverse set of interests and a strong
-                                    family foundation. My career has been a journey of learning, growth, and
-                                    contributing to
-                                    various sectors through technology. I bring this wealth of experience, passion, and
-                                    a
-                                    unique perspective to every project I undertake. Let's collaborate to create
-                                    innovative
-                                    solutions that make a difference!</p>
-
-                            </div>
-                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                aria-labelledby="pills-contact-tab">
-                                <div class="card text-bg-light">
-                                    <div class="card-body">
-                                        <!-- Unstatic Contact Form-->
-                                        <form method="post"
-                                            action="https://forms.un-static.com/forms/5bac3a7c37f7100c130f9f27504dc4e44b6cfc7a">
-                                            <div class="mb-3">
-                                                <input id="name" name="name" placeholder="Your name" type="text"
-                                                    required="required" class="form-control">
-                                            </div>
-                                            <div class="mb-3">
-                                                <input id="email" name="email" placeholder="Your e-mail address"
-                                                    type="text" required="required" class="form-control">
-                                            </div>
-                                            <div class="mb-3">
-                                                <textarea id="message" name="message" cols="40" rows="4"
-                                                    required="required" class="form-control"></textarea>
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <button name="submit" type="submit" class="btn btn-primary btn-lg">
-                                                    <i class="fa-solid fa-paper-plane"></i>
-                                                    Send</button>
-                                                <label for="message" class="form-label">(Powered by <a rel="nofollow"
-                                                        href="Un-static Forms">Un-static Forms</a>)</label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- What I Do Section -->
+    <section id="what-i-do" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5 fade-in-up">
+                <h2 class="display-5 fw-bold">What I Do</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4 fade-in-up delay-100">
+                    <div class="feature-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-earth-americas"></i>
                         </div>
+                        <h5>Global Solutions</h5>
+                        <p>Develop and deliver best-in-class, globally scalable software, cloud, and data solutions that exceed customer expectations and drive business growth.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4 fade-in-up delay-200">
+                    <div class="feature-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h5>Team Leadership</h5>
+                        <p>Establish high-performing, well-coordinated engineering teams dedicated to technical excellence, continuous improvement, and collaborative problem-solving.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4 fade-in-up delay-300">
+                    <div class="feature-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-chess"></i>
+                        </div>
+                        <h5>Technical Strategy</h5>
+                        <p>Formulate and execute short, medium, and long-term technical strategies that align with enterprise goals, ensuring technology is a key enabler of business success.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-6 fade-in-up delay-100">
+                    <div class="feature-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h5>Innovation & Agility</h5>
+                        <p>Foster a culture of innovation and agility, encouraging the exploration of emerging technologies and methodologies to maintain a competitive edge in the market.</p>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-md-6 col-lg-6 fade-in-up delay-200">
+                    <div class="feature-card h-100">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h5>Security & Privacy</h5>
+                        <p>Ensure robust cybersecurity and data privacy practices are ingrained across all technical operations, safeguarding organizational and customer data while complying with industry regulations.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Footer -->
-    <footer class="navbar fixed-bottom navbar-dark bg-dark py-3">
-        <div class="container-fluid">
-            <div class="container-fluid text-center">
-                <span class="navbar-text">
-                    &copy;&nbsp;Adam Heunis&nbsp;<span id="copyrightYear">2024</span>
-                </span>
+    </section>
+
+    <!-- Who I Am Section -->
+    <section id="who-i-am" class="section-padding section-alt-bg">
+        <div class="container">
+            <div class="section-header text-center mb-5 fade-in-up">
+                <h2 class="display-5 fw-bold">Who I Am</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="bio-content fade-in-up delay-100">
+                        <h3 class="mb-4 text-highlight">Technology and Innovation</h3>
+                        <p class="lead">I'm a seasoned executive with a deep-rooted passion for technology, particularly in the realms of software and data.</p>
+                        <p>My journey began in the picturesque Boesmansriviermond, a small village nestled along the stunning Eastern Cape coastline of South Africa. This beautiful, rural backdrop of my childhood sparked a contrasting fascination in technology that has stayed with me throughout my life.</p>
+
+                        <hr class="my-5 opacity-25">
+
+                        <div class="row g-5">
+                            <div class="col-md-6">
+                                <h4>The Beginning</h4>
+                                <p>After completing my studies, I embarked on my professional journey by developing a computerized quality system for my father's manufacturing business. This project not only honed my technical skills but also instilled in me a profound appreciation for practical, real-world applications of technology.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Global Impact</h4>
+                                <p>Over the years, I've had the privilege of building software and data solutions for some of the largest industries globally, including Manufacturing, Finance, and Healthcare. My expertise primarily revolves around the Microsoft and Azure ecosystems.</p>
+                            </div>
+                        </div>
+
+                        <div class="row g-5 mt-2">
+                             <div class="col-md-6">
+                                <h4>Photography</h4>
+                                <p>Beyond my professional endeavors, photography is my serious hobby. As a loyal Nikon enthusiast, I capture the world through my lens, bringing together my love for technology and art.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Family</h4>
+                                <p>Family is my cornerstone. I am blessed with a loving wife and two wonderful teenage daughters, who are the center of my universe. Their support and love fuel my ambitions and endeavors.</p>
+                            </div>
+                        </div>
+
+                        <div class="row g-5 mt-2">
+                            <div class="col-md-6">
+                                <h4>The Wilderness</h4>
+                                <p>Despite my deep engagement with technology, I have a profound love for the wilderness, especially the African savannah. It's in these natural landscapes that I find peace and inspiration.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Traveling</h4>
+                                <p>Traveling with my family is one of my greatest joys. Exploring new places together, experiencing different cultures, and creating lifelong memories is something we cherish deeply.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <h4 class="mb-3">Let's collaborate to innovate</h4>
+                            <p>I am a technology enthusiast with a diverse set of interests and a strong family foundation. Let's collaborate to create innovative solutions that make a difference!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5 fade-in-up">
+                <h2 class="display-5 fw-bold">Connect</h2>
+                <div class="divider mx-auto"></div>
+                <p class="mt-3 text-muted-light">Ready to start a project? Send me a message.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card contact-card fade-in-up delay-100">
+                        <div class="card-body p-4 p-md-5">
+                            <!-- Unstatic Contact Form-->
+                            <form method="post" action="https://forms.un-static.com/forms/5bac3a7c37f7100c130f9f27504dc4e44b6cfc7a">
+                                <div class="mb-4">
+                                    <label for="name" class="form-label text-uppercase small fw-bold">Name</label>
+                                    <input id="name" name="name" placeholder="Your name" type="text" required="required" class="form-control form-control-lg custom-input">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="form-label text-uppercase small fw-bold">Email</label>
+                                    <input id="email" name="email" placeholder="Your e-mail address" type="text" required="required" class="form-control form-control-lg custom-input">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="form-label text-uppercase small fw-bold">Message</label>
+                                    <textarea id="message" name="message" cols="40" rows="5" required="required" class="form-control form-control-lg custom-input"></textarea>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button name="submit" type="submit" class="btn btn-primary btn-lg btn-glow w-100">
+                                        <i class="fa-solid fa-paper-plane me-2"></i> Send Message
+                                    </button>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <small class="text-muted">(Powered by <a rel="nofollow" href="Un-static Forms" class="text-decoration-none text-highlight">Un-static Forms</a>)</small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container text-center">
+            <span class="text-muted-light">
+                &copy; Adam Heunis <span id="copyrightYear">2024</span>
+            </span>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
-        // self executing function here
         (function () {
-            // your page initialization code here
-            // the DOM will be available here
             document.getElementById("copyrightYear").innerHTML = new Date().getFullYear();
+
+            // Navbar background change on scroll
+            const navbar = document.getElementById('mainNav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
         })();
     </script>
 </body>
