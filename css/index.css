@@ -1,15 +1,15 @@
 :root {
-    --bg-dark: #0f172a;
-    --bg-darker: #020617;
-    --bg-card: #1e293b;
+    --bg-dark: #0a1414; /* Deep Forest Green/Black */
+    --bg-darker: #020505; /* Near Black */
+    --bg-card: #112222; /* Dark Slate Green */
     --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --primary-color: #0ea5e9; /* Sky 500 */
-    --primary-hover: #0284c7; /* Sky 600 */
-    --secondary-color: #6366f1; /* Indigo 500 */
-    --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
-    --card-border: 1px solid rgba(255, 255, 255, 0.05);
-    --glass-bg: rgba(15, 23, 42, 0.8);
+    --text-muted: #A5ACAF; /* Eagles Silver */
+    --primary-color: #004C54; /* Midnight Green */
+    --primary-hover: #006666; /* Lighter Green */
+    --secondary-color: #A5ACAF; /* Silver */
+    --accent-gradient: linear-gradient(135deg, #004C54 0%, #A5ACAF 100%);
+    --card-border: 1px solid rgba(0, 76, 84, 0.3);
+    --glass-bg: rgba(10, 20, 20, 0.8);
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -23,7 +23,7 @@ body {
     color: var(--text-main);
     font-family: var(--font-body);
     overflow-x: hidden;
-    padding-bottom: 0; /* Override old padding */
+    padding-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -105,8 +105,9 @@ a:hover {
     min-height: 100vh;
     padding-top: 80px; /* Navbar height */
     position: relative;
-    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%),
-                radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.1), transparent 40%);
+    /* Updated radial gradients to Midnight Green and Silver/Teal */
+    background: radial-gradient(circle at top right, rgba(0, 76, 84, 0.25), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(165, 172, 175, 0.1), transparent 40%);
 }
 
 .hero-text-col {
@@ -129,7 +130,9 @@ a:hover {
 }
 
 .btn-primary {
-    background: var(--accent-gradient);
+    /* Green background */
+    background: var(--primary-color);
+    color: var(--text-main); /* Light text for contrast against Green */
     border: none;
     padding: 12px 30px;
     border-radius: 50px;
@@ -147,10 +150,15 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+    /* Hover gradient: Lighter Green */
+    background: linear-gradient(135deg, #006666 0%, #004C54 100%);
     z-index: -1;
     transition: opacity 0.3s ease;
     opacity: 0;
+}
+
+.btn-primary:hover {
+    color: var(--text-main);
 }
 
 .btn-primary:hover::before {
@@ -158,12 +166,13 @@ a:hover {
 }
 
 .btn-glow {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    /* Updated glow to Green */
+    box-shadow: 0 0 20px rgba(0, 76, 84, 0.4);
     transition: box-shadow 0.3s ease;
 }
 
 .btn-glow:hover {
-    box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
+    box-shadow: 0 0 30px rgba(0, 76, 84, 0.6);
 }
 
 .btn-social {
@@ -179,10 +188,10 @@ a:hover {
 }
 
 .btn-social:hover {
-    background: var(--text-main);
-    color: var(--bg-dark);
+    background: var(--primary-color); /* Green hover */
+    color: var(--text-main); /* Light text on Green */
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 76, 84, 0.4);
 }
 
 .hero-image-wrapper {
@@ -196,7 +205,7 @@ a:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 2;
-    max-width: 80%; /* Smaller on desktop to not overpower */
+    max-width: 80%;
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -207,7 +216,8 @@ a:hover {
     transform: translate(-50%, -50%);
     width: 120%;
     height: 120%;
-    background: var(--accent-gradient);
+    /* Updated blob to Midnight Green */
+    background: linear-gradient(135deg, #004C54 0%, #006666 100%);
     filter: blur(60px);
     opacity: 0.3;
     z-index: 1;
@@ -265,13 +275,15 @@ a:hover {
 .feature-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: rgba(99, 102, 241, 0.3);
+    /* Border color on hover: Midnight Green tint */
+    border-color: rgba(0, 76, 84, 0.5);
 }
 
 .icon-wrapper {
     width: 60px;
     height: 60px;
-    background: rgba(14, 165, 233, 0.1);
+    /* Updated background tint to Midnight Green */
+    background: rgba(0, 76, 84, 0.2);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -325,12 +337,12 @@ a:hover {
 .custom-input:focus {
     background-color: rgba(0, 0, 0, 0.3);
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+    box-shadow: 0 0 0 4px rgba(0, 76, 84, 0.2); /* Green glow on focus */
     color: var(--text-main);
 }
 
 .custom-input::placeholder {
-    color: rgba(148, 163, 184, 0.5);
+    color: rgba(165, 172, 175, 0.5); /* Silver placeholder */
 }
 
 /* Footer */
