@@ -326,6 +326,10 @@ a:hover {
     border-radius: 20px;
 }
 
+.contact-card .form-label {
+    color: var(--text-muted);
+}
+
 .custom-input {
     background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
