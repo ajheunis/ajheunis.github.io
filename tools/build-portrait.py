@@ -37,7 +37,10 @@ DISSOLVE_START, DISSOLVE_END = 0.58, 0.93   # fraction of source height
 
 PAD_TOP, PAD_SIDE, PAD_BOTTOM = 0.04, 0.03, 0.0
 
-WIDTHS = (512, 640, 960)
+# The rendered slot is 196 / 290 / 440 CSS px (see .hero-portrait). 384 is
+# here so a phone at DPR 1.5-2 has something to pick that is not two thirds
+# larger than the box it lands in.
+WIDTHS = (384, 512, 640, 960)
 
 
 def smoothstep(x, lo, hi):
