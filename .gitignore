@@ -1,0 +1,6 @@
+# Local screenshot output from tools/verify_colors.py
+tools/screenshots/
+
+# Python
+__pycache__/
+*.pyc
