@@ -4,3 +4,7 @@ tools/screenshots/
 # Python
 __pycache__/
 *.pyc
+
+# Claude Code working directory. Locally installed agent skills and a
+# launch.json — one machine's tooling, not shared project configuration.
+.claude/
