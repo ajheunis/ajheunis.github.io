@@ -5,7 +5,9 @@
    ========================================================================== */
 
 :root {
+    color-scheme: dark;
     --bg: #0c0c0f;
+    --bg-rgb: 12, 12, 15;
     --bg-alt: #101015;
     --surface: #15151c;
     --ink: #ece7dd;
@@ -15,9 +17,12 @@
     --accent-ink: #14100a;
     --line: rgba(236, 231, 221, 0.12);
     --line-soft: rgba(236, 231, 221, 0.07);
+    /* Interactive boundaries need 3:1 against the page; --line does not reach it. */
+    --line-strong: rgba(236, 231, 221, 0.42);
     --serif: "Fraunces", Georgia, serif;
     --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --container: 1140px;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -58,16 +63,22 @@ h1, h2, h3 {
     font-weight: 500;
     line-height: 1.15;
     letter-spacing: -0.01em;
+    font-optical-sizing: auto;
 }
 
 h1 {
     font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+    line-height: 1.06;
+    letter-spacing: -0.026em;
+    text-wrap: balance;
     margin-bottom: 1.4rem;
 }
 
 h1 em {
     font-style: italic;
     color: var(--accent);
+    /* True Fraunces Italic runs optically wider than the roman. */
+    letter-spacing: -0.014em;
 }
 
 h2 {
@@ -82,7 +93,14 @@ h2 {
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
+    text-wrap: balance;
     margin-bottom: 1.1rem;
+}
+
+/* Where the credential line has to wrap, break it at the separator rather
+   than through the middle of a title. */
+.eyebrow span {
+    white-space: nowrap;
 }
 
 .lead {
@@ -109,8 +127,37 @@ a:hover {
     color: var(--accent-bright);
 }
 
+:focus-visible {
+    outline: 2px solid var(--accent-bright);
+    outline-offset: 3px;
+}
+
 ::selection {
     background: var(--accent);
+    color: var(--accent-ink);
+}
+
+/* --- Skip link ---------------------------------------------------------- */
+
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    z-index: 200;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0 0 2px 2px;
+    transform: translateY(-110%);
+    transition: transform 0.2s var(--ease-out);
+}
+
+.skip-link:focus-visible {
+    transform: translateY(0);
     color: var(--accent-ink);
 }
 
@@ -126,7 +173,12 @@ a:hover {
     border-radius: 2px;
     border: 1px solid transparent;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition:
+        background-color 0.25s var(--ease-out),
+        border-color 0.25s var(--ease-out),
+        color 0.25s var(--ease-out),
+        transform 0.25s var(--ease-out),
+        box-shadow 0.25s var(--ease-out);
 }
 
 .btn-solid {
@@ -138,17 +190,24 @@ a:hover {
     background: var(--accent-bright);
     color: var(--accent-ink);
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(198, 161, 91, 0.25);
+    box-shadow: 0 10px 30px -6px rgba(198, 161, 91, 0.32);
 }
 
 .btn-ghost {
-    border-color: var(--line);
+    border-color: var(--line-strong);
     color: var(--ink);
 }
 
 .btn-ghost:hover {
     border-color: var(--accent);
     color: var(--accent);
+    background: rgba(198, 161, 91, 0.07);
+    transform: translateY(-2px);
+}
+
+.btn-solid:active,
+.btn-ghost:active {
+    transform: translateY(0);
 }
 
 .btn-block {
@@ -164,8 +223,8 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 100;
-    padding: 22px 0;
-    transition: background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+    padding: 14px 0;
+    transition: background 0.3s ease, border-color 0.3s ease;
     border-bottom: 1px solid transparent;
 }
 
@@ -173,7 +232,6 @@ a:hover {
     background: rgba(12, 12, 15, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 14px 0;
     border-bottom-color: var(--line-soft);
 }
 
@@ -181,6 +239,14 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* The bar sits lower while it is transparent and rises as it condenses.
+       Done on the inner row so the condense never animates layout. */
+    transform: translateY(8px);
+    transition: transform 0.3s var(--ease-out);
+}
+
+.nav-scrolled .nav-inner {
+    transform: none;
 }
 
 .nav-brand {
@@ -198,11 +264,16 @@ a:hover {
 
 .nav-links {
     display: flex;
+}
+
+.nav-menu {
+    display: flex;
     align-items: center;
     gap: 2.2rem;
 }
 
 .nav-links a {
+    position: relative;
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.12em;
@@ -211,6 +282,29 @@ a:hover {
 }
 
 .nav-links a:hover {
+    color: var(--ink);
+}
+
+/* Which chapter of the page you are standing in. */
+.nav-links a:not(.nav-cta)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s var(--ease-out);
+}
+
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a:not(.nav-cta)[aria-current="true"]::after {
+    transform: scaleX(1);
+}
+
+.nav-links a:not(.nav-cta)[aria-current="true"] {
     color: var(--ink);
 }
 
@@ -230,48 +324,54 @@ a:hover {
     display: none;
     background: none;
     border: none;
-    width: 34px;
-    height: 26px;
+    /* 44px minimum touch target; negative margin keeps it optically flush. */
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
     position: relative;
     cursor: pointer;
 }
 
 .nav-toggle span {
     position: absolute;
-    left: 4px;
-    right: 4px;
+    left: 11px;
+    right: 11px;
     height: 2px;
     background: var(--ink);
-    transition: all 0.25s ease;
+    transition: top 0.25s var(--ease-out), transform 0.25s var(--ease-out);
 }
 
 .nav-toggle span:first-child {
-    top: 8px;
+    top: 17px;
 }
 
 .nav-toggle span:last-child {
-    top: 16px;
+    top: 25px;
 }
 
 .nav-toggle.open span:first-child {
-    top: 12px;
+    top: 21px;
     transform: rotate(45deg);
 }
 
 .nav-toggle.open span:last-child {
-    top: 12px;
+    top: 21px;
     transform: rotate(-45deg);
 }
 
 /* --- Hero ---------------------------------------------------------------- */
 
 .hero {
-    min-height: 100vh;
+    /* Leaves the top edge of the proof bar visible, so the page pulls downward. */
+    min-height: 92vh;
+    min-height: 92svh;
     display: flex;
     align-items: center;
-    padding: 140px 0 80px;
+    padding: 150px 0 90px;
+    /* The warm field the portrait dissolves into, positioned behind it. */
     background:
-        radial-gradient(ellipse 60% 50% at 75% 20%, rgba(198, 161, 91, 0.07), transparent 65%),
+        radial-gradient(ellipse 42% 44% at 71% 47%, rgba(198, 161, 91, 0.13), transparent 70%),
+        radial-gradient(ellipse 70% 55% at 12% 0%, rgba(236, 231, 221, 0.035), transparent 62%),
         var(--bg);
 }
 
@@ -299,27 +399,13 @@ a:hover {
     justify-content: center;
 }
 
-.photo-frame {
-    position: relative;
-    max-width: 360px;
-}
-
-.photo-frame::before {
-    content: "";
-    position: absolute;
-    inset: 18px -18px -18px 18px;
-    border: 1px solid var(--accent);
-    opacity: 0.55;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.photo-frame img {
-    position: relative;
-    z-index: 1;
+/* The portrait ships pre-treated — keyed off its studio sweep, toned to the
+   palette, and dissolved at the lower edge. See tools/build-portrait.py. */
+.hero-portrait {
     display: block;
     width: 100%;
-    filter: saturate(0.85) contrast(1.03);
+    max-width: 440px;
+    height: auto;
 }
 
 /* --- Proof bar ------------------------------------------------------------ */
@@ -693,13 +779,14 @@ a:hover {
 
 /* --- Animations --------------------------------------------------------------- */
 
-.fade-in-up {
+/* Scoped to .js so the page renders fully when scripting is unavailable. */
+.js .fade-in-up {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.fade-in-up.visible {
+.js .fade-in-up.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -712,15 +799,67 @@ a:hover {
     transition-delay: 0.2s;
 }
 
+/* --- Hero entrance -------------------------------------------------------
+   The page's one authored moment. Everything below the fold uses the plain
+   scroll fade; the hero gets a staged arrival on load instead. */
+
+@keyframes hero-rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+}
+
+@keyframes hero-headline {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+        filter: blur(12px);
+    }
+}
+
+@keyframes hero-portrait {
+    from {
+        opacity: 0;
+        clip-path: inset(0 0 26% 0);
+    }
+}
+
+.js .hero-text > *,
+.js .hero-photo {
+    animation: hero-rise 0.9s var(--ease-out) var(--d, 0s) both;
+}
+
+.js .hero-text h1 {
+    animation-name: hero-headline;
+    animation-duration: 1.15s;
+}
+
+.js .hero-photo {
+    animation-name: hero-portrait;
+    animation-duration: 1.25s;
+}
+
+.js .hero-text .eyebrow  { --d: 0.06s; }
+.js .hero-text h1        { --d: 0.14s; }
+.js .hero-text .hero-sub { --d: 0.32s; }
+.js .hero-ctas           { --d: 0.44s; }
+.js .hero-photo          { --d: 0.20s; }
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    .fade-in-up {
+    .js .fade-in-up {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+
+    .js .hero-text > *,
+    .js .hero-photo {
+        animation: none;
     }
 }
 
@@ -734,7 +873,7 @@ a:hover {
     }
 
     .hero {
-        padding-top: 120px;
+        padding: 124px 0 80px;
     }
 
     .hero-photo {
@@ -742,8 +881,9 @@ a:hover {
         justify-content: flex-start;
     }
 
-    .photo-frame {
-        max-width: 260px;
+    .hero-portrait {
+        max-width: 290px;
+        margin-left: -12px;
     }
 
     .pillars {
@@ -752,6 +892,12 @@ a:hover {
 
     .proof-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Grid items default to min-width:auto; the padded stat blocks cannot
+       shrink below their content and were forcing the page to scroll sideways. */
+    .proof-item {
+        min-width: 0;
     }
 
     .proof-item {
@@ -777,30 +923,45 @@ a:hover {
         display: block;
     }
 
+    /* Collapsed with grid-template-rows rather than a magic max-height, so the
+       menu measures itself and cannot clip if an item is ever added. */
     .nav-links {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
+        display: grid;
+        grid-template-rows: 0fr;
         background: #0e0e12;
         border-bottom: 1px solid var(--line-soft);
-        padding: 0 24px;
-        max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+        transition: grid-template-rows 0.32s var(--ease-out);
     }
 
     .nav-links.open {
-        max-height: 320px;
-        padding: 12px 24px 20px;
+        grid-template-rows: 1fr;
+    }
+
+    .nav-menu {
+        min-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0 24px;
     }
 
     .nav-links a {
         padding: 0.8rem 0;
         width: 100%;
+    }
+
+    .nav-menu a:first-child {
+        margin-top: 10px;
+    }
+
+    .nav-menu a:last-child {
+        margin-bottom: 16px;
     }
 
     .nav-links a.nav-cta {
@@ -809,16 +970,57 @@ a:hover {
         text-align: left;
     }
 
+    /* The sliding underline belongs to the horizontal bar, not the stacked
+       menu, where it would run the full width and crowd the next item. */
+    .nav-links a:not(.nav-cta)::after {
+        display: none;
+    }
+
     .nav,
     .nav-scrolled {
         background: #0c0c0f;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
-        padding: 14px 0;
+    }
+
+    .nav-inner {
+        transform: none;
+    }
+
+    /* Tightened so the primary call to action clears the fold on a phone. */
+    .hero {
+        padding: 88px 0 72px;
+    }
+
+    .hero-grid {
+        gap: 1.5rem;
+    }
+
+    .hero-portrait {
+        max-width: 196px;
+    }
+
+    .hero-sub {
+        font-size: 1.05rem;
+        line-height: 1.65;
+        margin-bottom: 1.4rem;
+    }
+
+    .hero-ctas .btn {
+        flex: 1 1 auto;
+        text-align: center;
     }
 
     .section {
         padding: 80px 0;
+    }
+
+    .proof-item {
+        padding: 2rem 1.1rem;
+    }
+
+    .proof-item dt {
+        font-size: 1.95rem;
     }
 
     .pillars {

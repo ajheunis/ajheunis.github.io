@@ -15,10 +15,12 @@
         gtag('config', 'G-NPSVPENF3Y');
     </script>
 
-    <!-- Fonts -->
+    <!-- Fonts — the ital axis is required: the hero headline and the footer note
+         set Fraunces in italic, and without it the browser synthesises a fake
+         oblique from the roman. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400..600&display=swap" rel="stylesheet">
 
     <title>Adam Heunis — Chief Technology Officer &amp; Board Advisor</title>
     <link rel="canonical" href="https://www.adamheunis.com/">
@@ -48,8 +50,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0c0c0f">
 
     <link rel="stylesheet" href="css/index.css">
+
+    <!-- Hero portrait is the LCP element. -->
+    <link rel="preload" as="image" href="images/adam-heunis-portrait-960.webp"
+        imagesrcset="images/adam-heunis-portrait-512.webp 512w, images/adam-heunis-portrait-640.webp 640w, images/adam-heunis-portrait-960.webp 960w"
+        imagesizes="(max-width: 767px) 248px, (max-width: 991px) 290px, 440px" fetchpriority="high">
+
+    <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
     {
@@ -94,27 +104,34 @@
 
 <body>
 
+    <a class="skip-link" href="#top">Skip to content</a>
+
     <!-- Navigation -->
     <header class="nav" id="mainNav">
         <div class="container nav-inner">
             <a class="nav-brand" href="#top">Adam&nbsp;Heunis</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="navLinks">
                 <span></span><span></span>
             </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#results">Results</a>
-                <a href="#what-i-do">What I Do</a>
-                <a href="#arc">The Arc</a>
-                <a href="#contact" class="nav-cta">Let's Talk</a>
+            <nav class="nav-links" id="navLinks" aria-label="Main">
+                <div class="nav-menu">
+                    <a href="#results">Results</a>
+                    <a href="#what-i-do">What I Do</a>
+                    <a href="#arc">The Arc</a>
+                    <a href="#contact" class="nav-cta">Let's Talk</a>
+                </div>
             </nav>
         </div>
     </header>
 
+    <main id="top">
+
     <!-- Hero -->
-    <section class="hero" id="top">
+    <section class="hero">
         <div class="container hero-grid">
-            <div class="hero-text fade-in-up">
-                <p class="eyebrow">Adam Heunis &middot; Chief Technology Officer &middot; Board Advisor</p>
+            <div class="hero-text">
+                <p class="eyebrow"><span>Chief Technology Officer&nbsp;&middot;</span> <span>Board Advisor</span></p>
                 <h1>I turn technology into <em>enterprise&nbsp;value.</em></h1>
                 <p class="hero-sub">20+ years building, scaling, and modernizing software businesses in regulated
                     industries — life sciences, clinical research, and financial services. Trusted by CEOs, PE
@@ -124,10 +141,11 @@
                     <a href="#results" class="btn btn-ghost">See the track record</a>
                 </div>
             </div>
-            <div class="hero-photo fade-in-up delay-200">
-                <div class="photo-frame">
-                    <img src="images/adam-heunis-profile-photo.jpg" alt="Adam Heunis">
-                </div>
+            <div class="hero-photo">
+                <img class="hero-portrait" src="images/adam-heunis-portrait-960.webp"
+                    srcset="images/adam-heunis-portrait-512.webp 512w, images/adam-heunis-portrait-640.webp 640w, images/adam-heunis-portrait-960.webp 960w"
+                    sizes="(max-width: 767px) 248px, (max-width: 991px) 290px, 440px" width="960" height="942"
+                    fetchpriority="high" decoding="async" alt="Adam Heunis">
             </div>
         </div>
     </section>
@@ -401,6 +419,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -432,18 +451,48 @@
             // Mobile nav toggle
             const toggle = document.getElementById('navToggle');
             const links = document.getElementById('navLinks');
-            toggle.addEventListener('click', function () {
-                const open = links.classList.toggle('open');
+
+            function setNav(open) {
+                links.classList.toggle('open', open);
                 toggle.classList.toggle('open', open);
-                toggle.setAttribute('aria-expanded', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+            }
+
+            toggle.addEventListener('click', function () {
+                setNav(!links.classList.contains('open'));
             });
             links.querySelectorAll('a').forEach(function (a) {
-                a.addEventListener('click', function () {
-                    links.classList.remove('open');
-                    toggle.classList.remove('open');
-                    toggle.setAttribute('aria-expanded', 'false');
-                });
+                a.addEventListener('click', function () { setNav(false); });
             });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && links.classList.contains('open')) {
+                    setNav(false);
+                    toggle.focus();
+                }
+            });
+            document.addEventListener('click', function (e) {
+                if (links.classList.contains('open') && !nav.contains(e.target)) setNav(false);
+            });
+
+            // Mark the section currently in view in the nav
+            const navTargets = [...links.querySelectorAll('a[href^="#"]')]
+                .map(function (a) { return { link: a, section: document.querySelector(a.getAttribute('href')) }; })
+                .filter(function (t) { return t.section; });
+
+            const spy = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    const target = navTargets.find(function (t) { return t.section === entry.target; });
+                    if (target) target.visible = entry.isIntersecting;
+                });
+                const current = navTargets.find(function (t) { return t.visible; });
+                navTargets.forEach(function (t) {
+                    if (t === current) t.link.setAttribute('aria-current', 'true');
+                    else t.link.removeAttribute('aria-current');
+                });
+            }, { rootMargin: '-45% 0px -45% 0px' });
+
+            navTargets.forEach(function (t) { spy.observe(t.section); });
 
             // Scroll-in animations
             const observer = new IntersectionObserver(function (entries) {
