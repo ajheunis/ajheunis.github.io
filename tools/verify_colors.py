@@ -1,7 +1,13 @@
 from playwright.sync_api import sync_playwright
-import time
+from pathlib import Path
+
+# Screenshots are local scratch output, not site assets - they used to land in
+# the repo root and get committed. Kept out of the published tree and ignored.
+OUT = Path(__file__).resolve().parent / "screenshots"
+
 
 def verify_colors():
+    OUT.mkdir(exist_ok=True)
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context()
@@ -24,20 +30,20 @@ def verify_colors():
             page.wait_for_timeout(1000)
 
             # Screenshot of the top part (Hero)
-            page.screenshot(path="hero_section.png", clip={"x": 0, "y": 0, "width": 1280, "height": 1000})
-            print("Captured hero_section.png")
+            page.screenshot(path=str(OUT / "hero_section.png"), clip={"x": 0, "y": 0, "width": 1280, "height": 1000})
+            print(f'Captured {OUT / "hero_section.png"}')
 
             # Scroll down
             page.evaluate("window.scrollTo(0, 1000)")
             page.wait_for_timeout(500)
-            page.screenshot(path="what_i_do_section.png", clip={"x": 0, "y": 1000, "width": 1280, "height": 1000})
-            print("Captured what_i_do_section.png")
+            page.screenshot(path=str(OUT / "what_i_do_section.png"), clip={"x": 0, "y": 1000, "width": 1280, "height": 1000})
+            print(f'Captured {OUT / "what_i_do_section.png"}')
 
             # Footer
             page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
             page.wait_for_timeout(500)
-            page.screenshot(path="footer_section.png", full_page=True)
-            print("Captured footer_section.png")
+            page.screenshot(path=str(OUT / "footer_section.png"), full_page=True)
+            print(f'Captured {OUT / "footer_section.png"}')
 
         except Exception as e:
             print(f"Error: {e}")
