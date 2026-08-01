@@ -761,6 +761,7 @@ a:hover {
 }
 
 .footer-social {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -770,6 +771,18 @@ a:hover {
     border-radius: 50%;
     color: var(--muted);
     transition: all 0.25s ease;
+}
+
+/* The circle is sized to sit with the copyright line; the touch target is not.
+   Expanded to the 44px minimum without changing what is drawn. */
+.footer-social::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
 }
 
 .footer-social:hover {
