@@ -159,4 +159,4 @@ Whether you're a CEO looking for a technology partner, a PE sponsor who needs di
 4. **Phone number intentionally omitted** from public copy; confirm before ever publishing it.
 5. **Forward-looking metrics** ("~100% YoY", "~90% reduction") are phrased as trajectory, not achievement. Revisit as they land.
 6. **Downloadable resume:** consider a "Request resume" CTA instead of a public PDF download, keeping brand detail gated behind contact.
-7. Existing site assets available: `images/adam-heunis-profile-photo.jpg` (portrait), `images/adam-heunis-profile-landscape-photo.jpg`.
+7. Existing site assets available: `images/adam-heunis-profile-photo.jpg` (1857×1857 studio headshot, used for the JSON-LD `Person.image`), `images/adam-heunis-portrait-960.webp` (transparent cutout, used for the hero and as the source for the social card), and `images/adam-heunis-social-card.jpg` (1200×630 `og:image`; its centre 630×630 must stand alone, because Google crops toward square).
